@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create-user-schema" author="${author_1}" dbms="${database}" context="${context_development}">
+        <comment>Create user schema</comment>
+
+        <createTable tableName="${tbl_user}" remarks="A table to contain all the users">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="first_name" type="varchar(100)"/>
+            <column name="middle_name" type="varchar(100)"/>
+            <column name="last_name" type="varchar(100)"/>
+            <column name="email" type="varchar(100)">
+                <constraints unique="true"/>
+            </column>
+            <column name="password" type="varchar(200)"/>
+            <column name="phone_number" type="varchar(13)"/>
+            <column name="gender" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="roll_no" type="varchar(15)">
+                <constraints unique="true"/>
+            </column>
+            <column name="employee_id" type="varchar(100)">
+                    <constraints unique="true"/>
+            </column>
+            <column name="qualification" type="varchar(100)"/>
+            <column name="created_at" type="datetime"/>
+            <column name="updated_at" type="datetime"/>
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>

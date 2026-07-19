@@ -1,0 +1,33 @@
+server:
+  port: 8765
+
+spring:
+  application:
+    name: API-GATEWAY
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/power_school_gateway_dev
+      database: power_school_gateway_dev
+  liquibase:
+    enabled: true
+    change-log: classpath:db/master-changelog.xml
+    contexts: development
+    default-schema: power_school_gateway_dev # Kept consistent with your database URL
+    liquibase-schema: power_school_gateway_dev
+    drop-first: false
+  cloud:
+    gateway:
+      routes:
+        - id: USER-MICROSERVICE
+          uri: lb://USER-MICROSERVICE
+          predicates:
+            - Path=/user/**
+          filters:
+            - name: AuthenticationFilter
+            - name: RateLimiterFilter
+              args:
+                strategy: TOKEN_BUCKET
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

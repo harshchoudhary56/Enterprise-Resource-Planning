@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="2025-08-12_insert-link-subject-department-data" author="${author_1}" dbms="${database}" context="${context_development}">
+        <comment>Insert subject-department mappings for Core, Science, Commerce, and Arts</comment>
+
+        <!-- Core Department (id=1) -->
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="1"/>
+            <column name="department_id" value="1"/>
+            <column name="subject_id" value="1"/> <!-- English -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="2"/>
+            <column name="department_id" value="1"/>
+            <column name="subject_id" value="2"/> <!-- Hindi -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="3"/>
+            <column name="department_id" value="1"/>
+            <column name="subject_id" value="3"/> <!-- Mathematics -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="4"/>
+            <column name="department_id" value="1"/>
+            <column name="subject_id" value="4"/> <!-- Geography -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="5"/>
+            <column name="department_id" value="1"/>
+            <column name="subject_id" value="5"/> <!-- History -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="6"/>
+            <column name="department_id" value="1"/>
+            <column name="subject_id" value="6"/> <!-- Civics -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="7"/>
+            <column name="department_id" value="1"/>
+            <column name="subject_id" value="7"/> <!-- Economics -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="8"/>
+            <column name="department_id" value="1"/>
+            <column name="subject_id" value="8"/> <!-- General Science -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="9"/>
+            <column name="department_id" value="1"/>
+            <column name="subject_id" value="9"/> <!-- Social Studies -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="10"/>
+            <column name="department_id" value="1"/>
+            <column name="subject_id" value="10"/> <!-- Environmental Studies -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="11"/>
+            <column name="department_id" value="1"/>
+            <column name="subject_id" value="11"/> <!-- Moral Science -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="12"/>
+            <column name="department_id" value="1"/>
+            <column name="subject_id" value="12"/> <!-- General Knowledge -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="13"/>
+            <column name="department_id" value="1"/>
+            <column name="subject_id" value="13"/> <!-- Art/Craft -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="14"/>
+            <column name="department_id" value="1"/>
+            <column name="subject_id" value="14"/> <!-- Physical Education -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="18"/>
+            <column name="department_id" value="1"/>
+            <column name="subject_id" value="18"/> <!-- Computer Science -->
+        </insert>
+
+        <!-- Science Department (id=2) -->
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="19"/>
+            <column name="department_id" value="2"/>
+            <column name="subject_id" value="1"/> <!-- English -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="20"/>
+            <column name="department_id" value="2"/>
+            <column name="subject_id" value="3"/> <!-- Mathematics -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="21"/>
+            <column name="department_id" value="2"/>
+            <column name="subject_id" value="15"/> <!-- Physics -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="22"/>
+            <column name="department_id" value="2"/>
+            <column name="subject_id" value="16"/> <!-- Chemistry -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="23"/>
+            <column name="department_id" value="2"/>
+            <column name="subject_id" value="18"/> <!-- Computer Science -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="24"/>
+            <column name="department_id" value="2"/>
+            <column name="subject_id" value="14"/> <!-- Physical Education -->
+        </insert>
+
+        <!-- Commerce Department (id=3) -->
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="25"/>
+            <column name="department_id" value="3"/>
+            <column name="subject_id" value="1"/> <!-- English -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="26"/>
+            <column name="department_id" value="3"/>
+            <column name="subject_id" value="2"/> <!-- Hindi -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="27"/>
+            <column name="department_id" value="3"/>
+            <column name="subject_id" value="3"/> <!-- Mathematics -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="28"/>
+            <column name="department_id" value="3"/>
+            <column name="subject_id" value="7"/> <!-- Economics -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="29"/>
+            <column name="department_id" value="3"/>
+            <column name="subject_id" value="19"/> <!-- Accountancy -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="30"/>
+            <column name="department_id" value="3"/>
+            <column name="subject_id" value="20"/> <!-- Business Studies -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="31"/>
+            <column name="department_id" value="3"/>
+            <column name="subject_id" value="21"/> <!-- Entrepreneurship -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="32"/>
+            <column name="department_id" value="3"/>
+            <column name="subject_id" value="14"/> <!-- Physical Education -->
+        </insert>
+
+        <!-- Arts Department (id=4) -->
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="33"/>
+            <column name="department_id" value="4"/>
+            <column name="subject_id" value="1"/> <!-- English -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="34"/>
+            <column name="department_id" value="4"/>
+            <column name="subject_id" value="2"/> <!-- Hindi -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="35"/>
+            <column name="department_id" value="4"/>
+            <column name="subject_id" value="4"/> <!-- Geography -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="36"/>
+            <column name="department_id" value="4"/>
+            <column name="subject_id" value="5"/> <!-- History -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="37"/>
+            <column name="department_id" value="4"/>
+            <column name="subject_id" value="6"/> <!-- Civics -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="38"/>
+            <column name="department_id" value="4"/>
+            <column name="subject_id" value="7"/> <!-- Economics -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="39"/>
+            <column name="department_id" value="4"/>
+            <column name="subject_id" value="22"/> <!-- Political Science -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="40"/>
+            <column name="department_id" value="4"/>
+            <column name="subject_id" value="23"/> <!-- Sociology -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="41"/>
+            <column name="department_id" value="4"/>
+            <column name="subject_id" value="24"/> <!-- Psychology -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="42"/>
+            <column name="department_id" value="4"/>
+            <column name="subject_id" value="25"/> <!-- Fine Arts -->
+        </insert>
+        <insert tableName="${tbl_link_subject_department}">
+            <column name="id" value="43"/>
+            <column name="department_id" value="4"/>
+            <column name="subject_id" value="14"/> <!-- Physical Education -->
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

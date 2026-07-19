@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create-session-schema" author="${author_1}" dbms="${database}" context="${context_development}">
+        <comment>Create session schema</comment>
+
+        <createTable tableName="${tbl_session}" remarks="A table to contain all the user sessions">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="accessToken" type="varchar(500)"/>
+            <column name="refreshToken" type="varchar(500)"/>
+            <column name="loginTime" type="datetime"/>
+            <column name="logoutTime" type="datetime"/>
+            <column name="deviceInfo" type="varchar(255)"/>
+            <column name="user_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_session_user" references="${tbl_user}(id)"/>
+            </column>
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

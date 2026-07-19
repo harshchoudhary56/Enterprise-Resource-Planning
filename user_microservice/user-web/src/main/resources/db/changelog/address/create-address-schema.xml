@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create-address-schema" author="${author_1}" dbms="${database}" context="${context_development}">
+        <comment>Create address schema</comment>
+
+        <createTable tableName="${tbl_address}" remarks="A table to contain all the addresses">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_address_user" references="${tbl_user}(id)"/>
+            </column>
+            <column name="street" type="varchar(255)"/>
+            <column name="city" type="varchar(100)"/>
+            <column name="state" type="varchar(100)"/>
+            <column name="postalCode" type="varchar(20)"/>
+            <column name="country" type="varchar(100)"/>
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

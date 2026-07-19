@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+            http://www.liquibase.org/xml/ns/dbchangelog-ext
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!-- ════════════════════════════════════════════════════════════════
+         Changeset 1: Create tbl_api_record collection
+         ════════════════════════════════════════════════════════════════ -->
+    <changeSet id="001-create-api-record-schema" author="${author_1}" dbms="${database}" context="${context_development}">
+        <comment>Create api-record schema</comment>
+
+        <ext:createCollection collectionName="${api-record}">
+            <ext:options>
+                {
+                validator: {
+                $jsonSchema: {
+                bsonType: "object",
+                required: ["crid", "httpMethod", "requestUri", "createdAt"],
+                properties: {
+                crid:           { bsonType: "string",  description: "Correlation/trace ID" },
+                httpMethod:     { bsonType: "string",  description: "HTTP method" },
+                requestUri:     { bsonType: "string",  description: "Request URI path" },
+                queryParams:    { bsonType: "string",  description: "Query parameters" },
+                requestHeaders: { bsonType: "string",  description: "Sanitized request headers" },
+                requestBody:    { bsonType: "string",  description: "Request body" },
+                httpStatusCode: { bsonType: "int",     description: "HTTP response status code" },
+                responseBody:   { bsonType: "string",  description: "Response body (truncated)" },
+                targetService:  { bsonType: "string",  description: "Downstream service name" },
+                clientIp:       { bsonType: "string",  description: "Client IP address" },
+                latencyMs:      { bsonType: "long",    description: "Request latency in ms" },
+                environment:    { bsonType: "string",  description: "Active environment" },
+                createdAt:      { bsonType: "date",    description: "Record creation timestamp" },
+                updatedAt:      { bsonType: "date",    description: "Record update timestamp" }
+                }
+                }
+                },
+                validationLevel: "moderate",
+                validationAction: "warn"
+                }
+            </ext:options>
+        </ext:createCollection>
+    </changeSet>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         Changeset 2: Create indexes for api_record
+         ════════════════════════════════════════════════════════════════ -->
+    <changeSet id="002-create-indexes-tbl-api-record" author="${author_1}" dbms="${database}" context="${context_development}">
+        <!-- Index on crid for fast lookups by correlation ID -->
+        <ext:createIndex collectionName="${api_record}">
+            <ext:keys>{ crid: 1 }</ext:keys>
+            <ext:options>{ name: "idx_crid", unique: false }</ext:options>
+        </ext:createIndex>
+
+        <!-- Index on createdAt for time-range queries and TTL-based cleanup -->
+        <ext:createIndex collectionName="${api_record}">
+            <ext:keys>{ createdAt: -1 }</ext:keys>
+            <ext:options>{ name: "idx_createdAt_desc" }</ext:options>
+        </ext:createIndex>
+
+        <!-- Index on targetService for per-service analytics -->
+        <ext:createIndex collectionName="${api_record}">
+            <ext:keys>{ targetService: 1 }</ext:keys>
+            <ext:options>{ name: "idx_targetService" }</ext:options>
+        </ext:createIndex>
+
+        <!-- Compound index for common query: service + time range -->
+        <ext:createIndex collectionName="${api_record}">
+            <ext:keys>{ targetService: 1, createdAt: -1 }</ext:keys>
+            <ext:options>{ name: "idx_targetService_createdAt" }</ext:options>
+        </ext:createIndex>
+
+        <!-- TTL index: auto-delete records older than 90 days -->
+        <ext:createIndex collectionName="${api_record}">
+            <ext:keys>{ createdAt: 1 }</ext:keys>
+            <ext:options>{ name: "idx_ttl_90days", expireAfterSeconds: 7776000 }</ext:options>
+        </ext:createIndex>
+    </changeSet>
+
+</databaseChangeLog>
+

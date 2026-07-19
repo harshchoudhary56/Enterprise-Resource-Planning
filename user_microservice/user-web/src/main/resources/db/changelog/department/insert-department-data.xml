@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="2025-08-12-17-26_insert-department-data" author="${author_1}" dbms="${database}" context="${context_development}">
+        <comment>Insert initial department data</comment>
+
+        <insert tableName="${tbl_department}">
+            <column name="id" value="1"/>
+            <column name="name" value="Core"/>
+            <column name="description" value="Common department for students up to 10th standard covering all subjects"/>
+            <column name="createdAt" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updatedAt" valueComputed="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="${tbl_department}">
+            <column name="id" value="2"/>
+            <column name="name" value="Science"/>
+            <column name="description" value="Science stream for 11th and 12th standards specializing in Physics, Chemistry, and Biology"/>
+            <column name="createdAt" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updatedAt" valueComputed="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="${tbl_department}">
+            <column name="id" value="3"/>
+            <column name="name" value="Commerce"/>
+            <column name="description" value="Commerce stream for 11th and 12th standards focusing on Accounting, Economics, and Business Studies"/>
+            <column name="createdAt" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updatedAt" valueComputed="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="${tbl_department}">
+            <column name="id" value="4"/>
+            <column name="name" value="Arts"/>
+            <column name="description" value="Arts stream for 11th and 12th standards covering History, Literature, and Social Sciences"/>
+            <column name="createdAt" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updatedAt" valueComputed="CURRENT_TIMESTAMP"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

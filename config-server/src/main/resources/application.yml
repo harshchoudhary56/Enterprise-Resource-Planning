@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: CONFIG-SERVER
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/harshchoudhary56/config-store
+          default-label: dev  # Specify the branch (e.g., main, dev)
+          clone-on-start: true
+          username: harshchoudhary56
+          password: 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
+          search-paths:
+            - user_microservice
+            - gateway
+            - service_registry
+server:
+  port: 8888

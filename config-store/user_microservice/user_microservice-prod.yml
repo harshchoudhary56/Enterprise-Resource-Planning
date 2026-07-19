@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: USER-MICROSERVICE
+  datasource:
+    url: jdbc:mysql://school-management-user-db.ch0geiusotcn.eu-north-1.rds.amazonaws.com
+    username: root
+    password: Hrhk@4321
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none # Disable Hibernate's auto schema creation since Liquibase will manage the schema
+    show-sql: true # Optional: Show SQL queries in logs
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect # Adjust dialect based on your database
+  liquibase:
+    enabled: true # Enable Liquibase
+    change-log: classpath:db/master-changelog.xml # Path to your master changelog file
+    contexts: development # Context to match your changelog (e.g., development, production)
+    default-schema: school_management_user_db # Optional: Specify the default schema
+    liquibase-schema: school_management_user_db # Optional: Schema for Liquibase's own tables (DATABASECHANGELOG, DATABASECHANGELOGLOCK)
+    drop-first: false # Optional: Set to true to drop the schema before applying changes (use with caution)
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+    enabled: true
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+server:
+  port: 8080

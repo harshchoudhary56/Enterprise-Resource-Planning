@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <!--    Database Information-->
+    <property name="database" value="mysql"/>
+    <property name="database_username" value="root"/>
+    <property name="add_constraint_database" value="mysql"/>
+
+
+    <!--    Developer Information-->
+    <property name="author_1" value="Harsh Choudhary"/>
+
+    <!--    Environment Information-->
+    <property name="context_testing" value="testing"/>
+    <property name="context_development" value="development"/>
+    <property name="context_staging" value="staging"/>
+    <property name="context_production" value="production"/>
+
+    <!--    Table Name(s)-->
+    <property name="tbl_address" value="tbl_address"/>
+    <property name="tbl_book" value="tbl_book"/>
+    <property name="tbl_class" value="tbl_class"/>
+    <property name="tbl_department" value="tbl_department"/>
+    <property name="tbl_link_parent_student" value="tbl_link_parent_student"/>
+    <property name="tbl_link_role_permission" value="tbl_link_role_permission"/>
+    <property name="tbl_link_section_subject_book" value="tbl_link_section_subject_book"/>
+    <property name="tbl_link_section_teacher" value="tbl_link_section_teacher"/>
+    <property name="tbl_link_subject_department" value="tbl_link_subject_department"/>
+    <property name="tbl_link_user_role" value="tbl_link_user_role"/>
+    <property name="tbl_permission" value="tbl_permission"/>
+    <property name="tbl_role" value="tbl_role"/>
+    <property name="tbl_section" value="tbl_section"/>
+    <property name="tbl_session" value="tbl_session"/>
+    <property name="tbl_subject" value="tbl_subject"/>
+    <property name="tbl_user" value="tbl_user"/>
+
+    <!--    Pre conditions-->
+    <preConditions onFail="HALT" onFailMessage="Unauthorized Access">
+        <dbms type="${database}"/>
+                <runningAs username="${database_username}"/>
+    </preConditions>
+
+    <!--    Include changelogs-->
+    <include file="changelog/role/create-role-schema.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/permission/create-permission-schema.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/linkRolePermission/create-link-role-permission-schema.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/department/create-department-schema.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/class/create-class-schema.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/section/create-section-schema.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/subject/create-subject-schema.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/linkSubjectDepartment/create-link-subject-department-schema.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/user/create-user-schema.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/address/create-address-schema.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/session/create-session-schema.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/linkParentStudent/create-link-parent-student-schema.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/linkUserRole/create-link-user-role-schema.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/linkSectionTeacher/create-link-section-teacher-schema.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/book/create-book-schema.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/linkSectionSubjectBook/create-link-section-subject-book-schema.xml" relativeToChangelogFile="true"/>
+    <include file="/changelog/user/alter-user-schema.xml" relativeToChangelogFile="true"/>
+
+<!--    <includes ></includes>-->
+    <include file="/changelog/department/insert-department-data.xml" relativeToChangelogFile="true"/>
+    <include file="/changelog/class/insert-class-data.xml" relativeToChangelogFile="true"/>
+    <include file="/changelog/section/insert-section-data.xml" relativeToChangelogFile="true"/>
+    <include file="/changelog/subject/insert-subject-data.xml" relativeToChangelogFile="true"/>
+    <include file="/changelog/linkSubjectDepartment/insert-link-subject-department-data.xml" relativeToChangelogFile="true"/>
+    <include file="/changelog/book/alter-book-schema.xml" relativeToChangelogFile="true"/>
+    <include file="/changelog/book/insert-book-data.xml" relativeToChangelogFile="true"/>
+    <include file="/changelog/linkSectionSubjectBook/insert-link-section-subject-book-data.xml" relativeToChangelogFile="true"/>
+
+
+
+</databaseChangeLog>

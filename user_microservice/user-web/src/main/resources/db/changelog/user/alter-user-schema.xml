@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="link_user_and_section" author="${author_1}" dbms="${database}" context="${context_development}">
+        <addColumn tableName="${tbl_user}">
+            <column name="section_id" type="bigint"/>
+        </addColumn>
+
+        <addForeignKeyConstraint
+                baseTableName="${tbl_user}"
+                baseColumnNames="section_id"
+                constraintName="fk_user_section"
+                referencedTableName="${tbl_section}"
+                referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="modify_gender_type" author="${author_1}" dbms="${database}" context="${context_development}">
+        <modifyDataType
+                tableName="${tbl_user}"
+                columnName="gender"
+                newDataType="VARCHAR(20)"/>
+    </changeSet>
+</databaseChangeLog>

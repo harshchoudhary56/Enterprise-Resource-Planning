@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create-link-section-subject-book-schema" author="${author_1}" dbms="${database}" context="${context_development}">
+        <comment>Create link section subject book schema</comment>
+
+        <createTable tableName="${tbl_link_section_subject_book}" remarks="A table to contain all the section-subject-book relationships">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="section_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_link_section_subject_book_section" references="${tbl_section}(id)"/>
+            </column>
+            <column name="subject_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_link_section_subject_book_subject" references="${tbl_subject}(id)"/>
+            </column>
+            <column name="book_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_link_section_subject_book_book" references="${tbl_book}(id)"/>
+            </column>
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

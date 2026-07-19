@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="2025-08-12_insert-subject-data" author="${author_1}" dbms="${database}" context="${context_development}">
+        <comment>Insert initial subject data for Core, Science, Commerce, and Arts departments</comment>
+
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="1"/>
+            <column name="name" value="English"/>
+            <column name="code" value="ENG"/>
+            <column name="description" value="Language and literature studies, including reading, writing, and communication skills"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="2"/>
+            <column name="name" value="Hindi"/>
+            <column name="code" value="HIN"/>
+            <column name="description" value="Hindi language and literature, focusing on linguistic skills and cultural studies"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="3"/>
+            <column name="name" value="Mathematics"/>
+            <column name="code" value="MATH"/>
+            <column name="description" value="Study of numbers, algebra, geometry, and problem-solving skills"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="4"/>
+            <column name="name" value="Geography"/>
+            <column name="code" value="GEO"/>
+            <column name="description" value="Study of physical landscapes, human geography, and environmental systems"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="5"/>
+            <column name="name" value="History"/>
+            <column name="code" value="HIST"/>
+            <column name="description" value="Study of historical events, civilizations, and cultural developments"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="6"/>
+            <column name="name" value="Civics"/>
+            <column name="code" value="CIV"/>
+            <column name="description" value="Study of government, citizenship, and civic responsibilities"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="7"/>
+            <column name="name" value="Economics"/>
+            <column name="code" value="ECO"/>
+            <column name="description" value="Study of economic systems, markets, and resource allocation"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="8"/>
+            <column name="name" value="General Science"/>
+            <column name="code" value="GSCI"/>
+            <column name="description" value="Introduction to basic concepts of physics, chemistry, and biology for younger students"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="9"/>
+            <column name="name" value="Social Studies"/>
+            <column name="code" value="SST"/>
+            <column name="description" value="Integrated study of history, geography, and civics for lower classes"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="10"/>
+            <column name="name" value="Environmental Studies"/>
+            <column name="code" value="EVS"/>
+            <column name="description" value="Study of environmental issues, sustainability, and ecosystems for younger students"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="11"/>
+            <column name="name" value="Moral Science"/>
+            <column name="code" value="MOR"/>
+            <column name="description" value="Values and ethics education for character development"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="12"/>
+            <column name="name" value="General Knowledge"/>
+            <column name="code" value="GK"/>
+            <column name="description" value="Broad knowledge of current affairs, facts, and general awareness"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="13"/>
+            <column name="name" value="Art/Craft"/>
+            <column name="code" value="ART"/>
+            <column name="description" value="Creative arts and crafts to foster creativity and motor skills"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="14"/>
+            <column name="name" value="Physical Education"/>
+            <column name="code" value="PE"/>
+            <column name="description" value="Physical fitness and sports activities for health and teamwork"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="15"/>
+            <column name="name" value="Physics"/>
+            <column name="code" value="PHY"/>
+            <column name="description" value="Study of physical laws, mechanics, and energy for science students"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="16"/>
+            <column name="name" value="Chemistry"/>
+            <column name="code" value="CHEM"/>
+            <column name="description" value="Study of chemical reactions, compounds, and materials for science students"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="17"/>
+            <column name="name" value="Biology"/>
+            <column name="code" value="BIO"/>
+            <column name="description" value="Study of living organisms and biological processes for science students"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="18"/>
+            <column name="name" value="Computer Science"/>
+            <column name="code" value="CS"/>
+            <column name="description" value="Study of programming, algorithms, and computer systems"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="19"/>
+            <column name="name" value="Accountancy"/>
+            <column name="code" value="ACC"/>
+            <column name="description" value="Study of financial accounting and bookkeeping for commerce students"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="20"/>
+            <column name="name" value="Business Studies"/>
+            <column name="code" value="BS"/>
+            <column name="description" value="Study of business management, organization, and operations for commerce students"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="21"/>
+            <column name="name" value="Entrepreneurship"/>
+            <column name="code" value="ENT"/>
+            <column name="description" value="Study of entrepreneurial skills and business creation for commerce students"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="22"/>
+            <column name="name" value="Political Science"/>
+            <column name="code" value="POL"/>
+            <column name="description" value="Study of political systems, governance, and international relations for arts students"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="23"/>
+            <column name="name" value="Sociology"/>
+            <column name="code" value="SOC"/>
+            <column name="description" value="Study of society, culture, and social behavior for arts students"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="24"/>
+            <column name="name" value="Psychology"/>
+            <column name="code" value="PSY"/>
+            <column name="description" value="Study of human behavior and mental processes for arts students"/>
+        </insert>
+        <insert tableName="${tbl_subject}">
+            <column name="id" value="25"/>
+            <column name="name" value="Fine Arts"/>
+            <column name="code" value="FA"/>
+            <column name="description" value="Study of visual arts, painting, and creative expression for arts students"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

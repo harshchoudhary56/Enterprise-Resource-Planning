@@ -1,0 +1,8 @@
+Endpoint	HTTP Method	Description							
+/gateway/routes	GET	Returns a list of all defined routes in the gateway.							
+/gateway/routes/{id}	GET	Returns information about a single, specific route.							
+/gateway/routes/{id}	POST	Adds a new route to the gateway dynamically.							
+/gateway/routes/{id}	DELETE	Deletes an existing route dynamically.							
+/gateway/globalfilters	GET	Returns a list of all applied global filters.							
+/gateway/routefilters	GET	Returns a list of all GatewayFilter factories applied to routes.							
+/gateway/refresh	POST	Clears the routes cache. Useful if you've dynamically changed routing rules and need them to take effect immediately.							

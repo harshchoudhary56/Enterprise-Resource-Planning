@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+            http://www.liquibase.org/xml/ns/dbchangelog-ext
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <!--    Database Information-->
+    <property name="database" value="mongodb"/>
+    <property name="database_username" value="root"/>
+    <property name="add_constraint_database" value="mongodb"/>
+
+
+    <!--    Collection Name(s)-->
+    <property name="api-record" value="api-record"/>
+
+    <!--    Developer Information-->
+    <property name="author_1" value="Harsh Choudhary"/>
+
+    <!--    Pre conditions-->
+    <preConditions onFail="HALT" onFailMessage="Unauthorized Access">
+        <dbms type="${database}"/>
+        <runningAs username="${database_username}"/>
+    </preConditions>
+
+    <include file="db/changelog/mongo/api-record/001-create-tbl-api-record.xml"/>
+
+</databaseChangeLog>
+

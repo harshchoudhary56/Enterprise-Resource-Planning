@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="2025-08-12-17-32_insert-class-data" author="${author_1}" dbms="${database}" context="${context_development}">
+        <comment>Insert initial class data for Core, Science, Commerce, and Arts departments</comment>
+
+        <!-- Core Department Classes (Nursery, KG, 1st to 10th) -->
+        <insert tableName="${tbl_class}">
+            <column name="id" value="1"/>
+            <column name="department_id" value="1"/>
+            <column name="name" value="Nursery"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+        <insert tableName="${tbl_class}">
+            <column name="id" value="2"/>
+            <column name="department_id" value="1"/>
+            <column name="name" value="KG"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+        <insert tableName="${tbl_class}">
+            <column name="id" value="3"/>
+            <column name="department_id" value="1"/>
+            <column name="name" value="1st"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+        <insert tableName="${tbl_class}">
+            <column name="id" value="4"/>
+            <column name="department_id" value="1"/>
+            <column name="name" value="2nd"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+        <insert tableName="${tbl_class}">
+            <column name="id" value="5"/>
+            <column name="department_id" value="1"/>
+            <column name="name" value="3rd"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+        <insert tableName="${tbl_class}">
+            <column name="id" value="6"/>
+            <column name="department_id" value="1"/>
+            <column name="name" value="4th"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+        <insert tableName="${tbl_class}">
+            <column name="id" value="7"/>
+            <column name="department_id" value="1"/>
+            <column name="name" value="5th"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+        <insert tableName="${tbl_class}">
+            <column name="id" value="8"/>
+            <column name="department_id" value="1"/>
+            <column name="name" value="6th"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+        <insert tableName="${tbl_class}">
+            <column name="id" value="9"/>
+            <column name="department_id" value="1"/>
+            <column name="name" value="7th"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+        <insert tableName="${tbl_class}">
+            <column name="id" value="10"/>
+            <column name="department_id" value="1"/>
+            <column name="name" value="8th"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+        <insert tableName="${tbl_class}">
+            <column name="id" value="11"/>
+            <column name="department_id" value="1"/>
+            <column name="name" value="9th"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+        <insert tableName="${tbl_class}">
+            <column name="id" value="12"/>
+            <column name="department_id" value="1"/>
+            <column name="name" value="10th"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+
+        <!-- Science Department Classes (11th, 12th) -->
+        <insert tableName="${tbl_class}">
+            <column name="id" value="13"/>
+            <column name="department_id" value="2"/>
+            <column name="name" value="11th"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+        <insert tableName="${tbl_class}">
+            <column name="id" value="14"/>
+            <column name="department_id" value="2"/>
+            <column name="name" value="12th"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+
+        <!-- Commerce Department Classes (11th, 12th) -->
+        <insert tableName="${tbl_class}">
+            <column name="id" value="15"/>
+            <column name="department_id" value="3"/>
+            <column name="name" value="11th"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+        <insert tableName="${tbl_class}">
+            <column name="id" value="16"/>
+            <column name="department_id" value="3"/>
+            <column name="name" value="12th"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+
+        <!-- Arts Department Classes (11th, 12th) -->
+        <insert tableName="${tbl_class}">
+            <column name="id" value="17"/>
+            <column name="department_id" value="4"/>
+            <column name="name" value="11th"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+        <insert tableName="${tbl_class}">
+            <column name="id" value="18"/>
+            <column name="department_id" value="4"/>
+            <column name="name" value="12th"/>
+            <column name="academicYear" value="2025-2026"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
