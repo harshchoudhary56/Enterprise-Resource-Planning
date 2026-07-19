@@ -54,7 +54,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class ApiRecordAspect {
 
-    private final ApiRecordPersistenceService persistenceService;
+    private final ApiRecordPersistenceService persistenceService = null;
 
     @Value("${spring.profiles.active:unknown}")
     private String environment;

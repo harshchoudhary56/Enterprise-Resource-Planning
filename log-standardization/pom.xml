@@ -14,7 +14,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<java.version>25</java.version>
+		<java.version>21</java.version>
         <logstash.logback.encoder.version>7.4</logstash.logback.encoder.version>
 	</properties>
 
@@ -64,17 +64,33 @@
 	</dependencies>
 
     <distributionManagement>
-        <snapshotRepository>
-            <id>school-erp-snapshots</id>
-            <name>school-erp-snapshots-local</name>
-            <url>https://trialmzh4pl.jfrog.io/artifactory/school-erp-maven-snapshot-local</url>
-        </snapshotRepository>
+        <!-- Where official, finalized release builds (e.g., version 1.0.0) are published -->
         <repository>
-            <id>school-erp-central</id>
-            <name>school-erp-central-local</name>
-            <url>https://trialmzh4pl.jfrog.io/artifactory/school-erp-maven-release-local</url>
+            <id>central</id>
+            <name>JFrog Artifactory Release Repository</name>
+            <url>https://trialzv4zpr.jfrog.io/artifactory/erm-maven-release-local</url>
         </repository>
+
+        <!-- Where unstable, work-in-progress builds (e.g., version 1.0.0-SNAPSHOT) are published -->
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>JFrog Artifactory Snapshot Repository</name>
+            <url>https://trialzv4zpr.jfrog.io/artifactory/erm-maven-snapshot-local</url>
+        </snapshotRepository>
     </distributionManagement>
+
+<!--    <distributionManagement>-->
+<!--        <snapshotRepository>-->
+<!--            <id>school-erp-snapshots</id>-->
+<!--            <name>school-erp-snapshots-local</name>-->
+<!--            <url>https://trialmzh4pl.jfrog.io/artifactory/school-erp-maven-snapshot-local</url>-->
+<!--        </snapshotRepository>-->
+<!--        <repository>-->
+<!--            <id>school-erp-central</id>-->
+<!--            <name>school-erp-central-local</name>-->
+<!--            <url>https://trialmzh4pl.jfrog.io/artifactory/school-erp-maven-release-local</url>-->
+<!--        </repository>-->
+<!--    </distributionManagement>-->
 
     <build>
         <plugins>
